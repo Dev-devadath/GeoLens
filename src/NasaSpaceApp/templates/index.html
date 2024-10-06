@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geo Lens</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="content">
+        <h1>Geo Lens</h1>
+        <div class="avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="search-bar">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Kanjirapally</p>
+
+          <i class="fa-solid fa-angle-down"></i>
+          <span class="separator">|</span>
+          <button><i class="fa fa-search"></i></button>
+          <input
+            type="text"
+            id="location-input"
+            placeholder="SEARCH FOR LOCATION"
+          />
+        </div>
+        <div class="filter-buttons">
+          <button>
+            <input type="radio" class="all" id="all" name="selection" />
+            <label for="all">ALL</label>
+          </button>
+          <button>
+            <input type="radio" id="soil-report" name="selection" />
+            <label for="soil-report">SOIL REPORT</label>
+          </button>
+          <button>
+            <input type="radio" id="water-report" name="selection" />
+            <label for="water-report">WATER REPORT</label>
+          </button>
+          <button>
+            <input type="radio" id="weather-report" name="selection" />
+            <label for="weather-report">WEATHER REPORT</label>
+          </button>
+          <button>
+            <input type="radio" id="crop-report" name="selection" />
+            <label for="crop-report">CROP REPORT</label>
+          </button>
+        </div>
+        <button class="know-land-button">KNOW YOUR LAND</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="analysis">
+        <h2>Analysis</h2>
+        <div class="analysis-options">
+          <div class="analysis-item">
+            <img src="{% static 'images/soil-icon.png' %}" alt="Soil Icon" />
+            <p style="font-family: Arvo">Soil</p>
+            <span>Cambisols</span>
+          </div>
+          <div class="analysis-item">
+            <img src="{% static 'images/water.png' %}" alt="Water Icon" />
+            <p style="font-family: Lobster">Water</p>
+            <span>High</span>
+          </div>
+          <div class="analysis-item">
+            <img
+              src="{% static 'images/weather-icon.png' %}"
+              alt="Weather Icon"
+            />
+            <p style="font-family: Bebas Neue">Weather</p>
+            <span>Sunny</span>
+          </div>
+          <div class="analysis-item">
+            <img src="{% static 'images/ph-icon.png' %}" alt="pH Icon" />
+            <p style="font-family: Comfortaa">pH</p>
+            <span>6.5</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="reports">
+        <h2>Reports</h2>
+        <div class="report-item">
+          <div class="round">
+            <img src="" alt="Image 1" />
+          </div>
+          <a href="soil.html"><p>Soil Quality</p></a>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="report-item">
+          <div class="round">
+            <img src="" alt="Image 1" />
+          </div>
+          <p>Water Levels</p>
+          <button class="view-btn">View</button>
+        </div>
+        <div class="report-item">
+          <div class="round">
+            <img src="" alt="Image 1" />
+          </div>
+          <p>Weather Forecast</p>
+          <button class="view-btn">View</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="container1">
+      <section class="crop-recommendation">
+        <h2>Crop Recommendation</h2>
+        <p class="subheading">Crop recommendation according to your location</p>
+        <div class="crop-list">
+          <div class="crop-item">
+            <div class="crop-icon"></div>
+            <a href="https://en.wikipedia.org/wiki/Coconut"><p>COCONUT</p></a>
+          </div>
+          <div class="crop-item">
+            <div class="crop-icon"></div>
+            <a href="https://en.wikipedia.org/wiki/Banana"><p>BANANA</p></a>
+          </div>
+          <div class="crop-item">
+            <div class="crop-icon"></div>
+            <a href="https://en.wikipedia.org/wiki/Natural_rubber"
+              ><p>RUBBER</p></a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+      document
+        .querySelector(".know-land-button")
+        .addEventListener("click", function () {
+          setTimeout(function () {
+            document.querySelector(".background").style.height = "58%";
+            document.querySelector(".container").style.display = "block";
+            document.querySelector(".container1").style.display = "block";
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>
